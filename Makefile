@@ -1,8 +1,11 @@
 # You can set REGISTRY to build images for a private docker registery - e.g. docker.yp.com/
 # leave blank for hub.docker.com/
 REGISTRY=
-VERSION ?= $(shell git describe --tags --always --dirty --match=v* 2> /dev/null || \
-			cat $(CURDIR)/.version 2> /dev/null || echo v0)
+# Version is defined in the VERSION file.  Once you put into Jenkins CI have the version
+# come from get describe.
+# VERSION ?= $(shell git describe --tags --always --dirty --match=v* 2> /dev/null)
+VERSION ?= $(shell cat $(CURDIR)/VERSION 2> /dev/null)
+
 IMAGE_PATH=$(REGISTRY)rayjohnson/wp
 IMAGE=$(IMAGE_PATH):$(VERSION)
 

@@ -25,7 +25,7 @@ run: .build  ## Run docker image with env file
 
 .PHONY: shell
 shell: .build  ## Run docker image launching into a bash shell - it also mounts source dir
-	docker run --rm -it -v "${PWD}":/wp_app --env-file prod.env -p 8080:8080 $(IMAGE) bash
+	docker run --rm -it -v "${PWD}":/wp_app -e RAILS_ENV=test --env-file prod.env -p 8080:8080 $(IMAGE) bash
 
 .PHONY: help
 help:   ## Display this help message

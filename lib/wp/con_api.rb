@@ -31,8 +31,8 @@ require 'faraday_middleware'
 
 		def self.get_separations(parameters)
 			service_url = "#{API_VERSION}/separations"
-			if ![:from_name, :from_city, :from_state, :to_name, :to_city, :to_state].all? {|s| parameters.key? s}
-				raise "missing parameters to get_separations call"
+			if ![:from_name, :from_city, :from_state, :to_name, :to_city, :to_state].all? {|s| parameters[s].present?}
+				raise WpApiError, "missing or empty parameters to get_separations call"
 			end
 
 			conn = Faraday.new(url: API_URL) do |faraday|

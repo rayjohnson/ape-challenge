@@ -20,11 +20,11 @@ Gemfile.lock: Gemfile
 build: .build  ## Build our docker image
 
 .PHONY: run
-run: .build  ## Run docker image with env file
+run: .build  ## Run container in detached mode
 	docker run --rm -d --name ray-vpe --env-file prod.env -p 8080:8080 $(IMAGE)
 
 .PHONY: shell
-shell: .build  ## Run docker image launching into a bash shell - it also mounts source dir
+shell: .build  ## Run container interactively - with mounted source
 	docker run --rm -it -v "${PWD}":/wp_app -e RAILS_ENV=test --env-file prod.env -p 8080:8080 $(IMAGE) bash
 
 .PHONY: help

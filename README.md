@@ -4,9 +4,9 @@ This is a little application that uses the vpe-challenge API of Whitepages.
 
 # Building the Application
 
-You do not need any paticular version of ruby.  But you do need Docker installed.
+You do not need any particular version of ruby.  But you do need Docker installed.
 
-Clone the git repository.  Then from tthe root of the project directoy do:
+Clone the git repository.  Then from the root of the project directory do:
 ```bash
 make build
 ```
@@ -74,7 +74,7 @@ to see test results.  (Or run any other command you wish to test or debug.)
 Well there can many improvements as this was done in only two days.
 The code is simplistic at this point and could be more robust in every area.
 
-I don't have any client side validartion - which would be worth adding next.
+I don't have any client side validation - which would be worth adding next.
 The bootstrap validation stuff would make for a cleaner UI.  I probably 
 would change the state field to be a drop down as well.
 
@@ -93,13 +93,13 @@ This is a simple app - I'd assume it would get rolled into something larger.
 Aside from making the app more useful, robust and bug free - we would also
 want to tie into WP deployment and monitoring systems.
 
-I'd expect we would want to use Jecnkins (or something like) to build this.
+I'd expect we would want to use Jenkins (or something like) to build this.
 My Makefile can be adjusted to get a version number from a tag and Jenkins
-can buid when new tags are cut.
+can build when new tags are cut.
 
 For deployment we would want to package up a reference to a specific image
-along with and app specific configs for kunernetes and the corrent env
-file to QA and operations folks.  TYhis really should be done in a way
+along with and app specific configs for Kubernetes and the correct env
+file to QA and operations folks.  This really should be done in a way
 that enforces SOX and logs all changes to out environment.
 
 Lastly we would want proper monitoring of the app and a way for developers

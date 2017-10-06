@@ -18,6 +18,8 @@ class PagesController < ApplicationController
   		return
 	end
 
+	# Call backend service and Mapping of results to something readable
+	# This should really happen somewhere else (like in a Model)
   	begin
   		result = Wp::ConApi.get_separations(params)
 

@@ -51,9 +51,9 @@ Logs for both of the containers will flow - but they are color coded.
 # Logging
 
 I've set up logging to go to stdout.  This is the docker way.  However,
-many companies do it differently - not sure what WP is doing.  At YP we
-had set up a Graylog environment to send logs.  We also sent more structured
-logs to better alert on errors and graph things like ingress and egress service times.
+many companies do it differently.  At YP we had set up a Graylog environment
+to send logs over UDP.  From there we were able to do alerting and graph things
+like ingress and egress service times.
 
 # Running tests
 
@@ -100,7 +100,7 @@ can build when new tags are cut.
 For deployment we would want to package up a reference to a specific image
 along with and app specific configs for Kubernetes and the correct env
 file to QA and operations folks.  This really should be done in a way
-that enforces SOX and logs all changes to out environment.
+that enforces SOX compliance and logs all changes to the production environment.
 
 Lastly we would want proper monitoring of the app and a way for developers
 to access operational stats and view production logs.

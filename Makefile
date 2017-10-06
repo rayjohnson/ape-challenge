@@ -21,7 +21,7 @@ build: .build  ## Build our docker image
 
 .PHONY: run
 run: .build  ## Run docker image with env file
-	docker run --rm --env-file prod.env -p 8080:8080 $(IMAGE) bash
+	docker run --rm -d --name ray-vpe --env-file prod.env -p 8080:8080 $(IMAGE)
 
 .PHONY: shell
 shell: .build  ## Run docker image launching into a bash shell - it also mounts source dir

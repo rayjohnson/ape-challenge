@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ray-vpe:
+    ports:
+     - "8080:8080"
+    image: "rayjohnson/wp:v1.0"
+    env_file:
+      - prod.env
+
+  challenge-api:
+    image: "challenge-api:latest"
+    env_file:
+      - challenge-api.env
+

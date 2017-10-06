@@ -1,0 +1,131 @@
+<div class="jumbotron">
+	<h1 class="display-4">Whitepages Connection Tool</h1>
+	<p class="lead">This tool finds if there is a connection of some sort between any two people.</p>
+	<hr class="my-4">
+	<p>All of the fields below are required.  Enter your data and click "Check for connection" to see if we can find a connection between these two people.</p>
+</div>
+
+<!-- Modal for displaying messages -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h5 class="modal-title">Connection results</h5>
+            </div>
+
+            <div class="modal-body">
+                <!-- The messages container -->
+                <div id="connection_result">Stuff here</div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Try Again!</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+<div class="row">
+	<div class="col-md-6">
+		<div class="card">
+			<div class="card-body">
+				<!-- Form Name -->
+				<h4 class="card-title">First Person</h4>
+
+				<form class="form-horizontal" id="input-form">
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="textinput">Name</label>
+					<div class="col-sm-10 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="from-name" type="text" placeholder="example: Ray Johnson" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="textinput">City</label>
+					<div class="col-sm-10 inputGroupContainer">
+						<div class="input-group"> <span class="input-group-addon">
+							<i class="glyphicon glyphicon-home"></i></span>
+							<input id="from-city" type="text" placeholder="example: Los Angeles" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="textinput">State</label>
+					<div class="col-sm-10 inputGroupContainer">
+						<div class="input-group"> <span class="input-group-addon">
+							<i class="glyphicon glyphicon-home"></i></span>
+							<input id="from-state" type="text" placeholder="example: California" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6">
+		<div class="card">
+			<div class="card-body">
+
+				<!-- Form Name -->
+				<h4 class="card-title">Second Person</h4>
+
+				<form class="form-horizontal">
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="textinput">Name</label>
+					<div class="col-sm-10 inputGroupContainer">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							<input id="to-name" type="text" placeholder="example Sheryl Johnson" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="textinput">City</label>
+					<div class="col-sm-10 inputGroupContainer">
+						<div class="input-group"> <span class="input-group-addon">
+							<i class="glyphicon glyphicon-home"></i></span>
+							<input id="to-city" type="text" placeholder="example: Portland" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="textinput">State</label>
+					<div class="col-sm-10 inputGroupContainer">
+						<div class="input-group"> <span class="input-group-addon">
+							<i class="glyphicon glyphicon-home"></i></span>
+							<input id="to-state" type="text" placeholder="example: Oregon" class="form-control">
+						</div>
+					</div>
+				</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="text-center">
+		<button id="check-con-but" type="submit" class="btn btn-default">Check for connection</button>
+	</div>
+</div>
+

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/home'
+  post 'pages/find_connection'
 
   root to: 'pages#home'
 
